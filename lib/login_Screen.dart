@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_login_ui/constants/pallete.dart';
+import 'package:responsive_login_ui/widgets/gradient_button.dart';
+import 'package:responsive_login_ui/widgets/login_field.dart';
 import 'package:responsive_login_ui/widgets/social_button.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -16,18 +18,35 @@ class LoginScreen extends StatelessWidget {
             children: [
               Image.asset('assets/images/signin_balls.png'),
               Text(
-                'Sign In',
+                'Sign In.',
                 style: TextStyle(
                     color: Pallete.whiteColor,
-                    fontSize: 45,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
-                height: 50,
-              ),
+              SizedBox(height: 50),
               SocialButton(
+                  onPressed: () {},
                   socialImage: 'assets/svgs/g_logo.svg',
-                  buttonText: 'Continue with Google')
+                  buttonText: 'Continue with Google'),
+              SizedBox(height: 20),
+              SocialButton(
+                onPressed: () {},
+                socialImage: 'assets/svgs/f_logo.svg',
+                buttonText: 'Continue with Facebook',
+                horizontalPadding: 90,
+              ),
+              SizedBox(height: 15),
+              Text(
+                "or",
+                style: TextStyle(color: Pallete.whiteColor, fontSize: 17),
+              ),
+              SizedBox(height: 15),
+              LoginField(hintText: 'Email'),
+              SizedBox(height: 20),
+              LoginField(hintText: 'Password'),
+              SizedBox(height: 25),
+              GradientButton(buttonText: 'Sign In', onPressed: () {}),
             ],
           ),
         ),
